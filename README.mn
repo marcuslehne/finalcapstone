@@ -1,5 +1,14 @@
 Project Name:
-
+Task Managemment program 
 
 Description:
+the final capstone project of the HyperionDev Software Engineering bootcamp. This was to add functionality to the program, allowing users to view all, 
+add and modify their own tasks. while admin privilidges also allowed user account creation and statistics presentation. With the tasks, user accounts and statistics stored in files.
+
+Installation:
+download files users.txt, tasks.txt and task_manager.py to same folder. 
+
+Usage:
+run the program, enter username/passwords from the users.txt file. from within the program tasks, user_overview and task_overview files can be amended. 
+
 

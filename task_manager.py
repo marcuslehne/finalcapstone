@@ -33,7 +33,7 @@ def save_to_file() :
     
 
 def reg_user() :
-# is called main menu to add a new user to username_password and user.txt
+# is called main menu to add a new user to username_password and users.txt
 
     # user is prompted to enter a new username. if its already in use, the user will be 
     # given a second chance to enter a new user name before function is exited
@@ -60,8 +60,8 @@ def reg_user() :
         username_password[new_username] = new_password
         
         # the keys of dictionary username_password is looped through, with pairs appended to the list user_data
-        # with it being written to file user.txt
-        with open("user.txt", "w") as out_file:
+        # with it being written to file users.txt
+        with open("users.txt", "w") as out_file:
             user_data = []
             for k in username_password:
                 user_data.append(f"{k};{username_password[k]}")
@@ -320,15 +320,15 @@ def read_users_file() :
     global username_password 
     username_password = {}
 
-    # If no user.txt file, write one with a default account
-    if not os.path.exists("user.txt"):
-        with open("user.txt", "w") as default_file:
+    # If no users.txt file, write one with a default account
+    if not os.path.exists("users.txt"):
+        with open("users.txt", "w") as default_file:
             default_file.write("admin;password")
-
+            
     # reads each line of user file to list user_data 
-    with open("user.txt", 'r', encoding='utf-8') as user_file:
+    with open("users.txt", 'r', encoding='utf-8') as user_file:
         user_data = user_file.read().split("\n")
-    
+        print(user_data)
     # splits each element of user_data on semicolon delimeter then stored in dictionary username_password with username as key and passwrod for value
     for user in user_data:
         username, password = user.split(';')
